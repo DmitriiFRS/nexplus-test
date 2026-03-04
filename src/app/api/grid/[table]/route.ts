@@ -12,8 +12,8 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
 		const body = await request.json();
 		const { sortModel, filterModel } = body;
 
-		console.log("sortModel =========== >", sortModel);
-		console.log("filterModel =========== >", filterModel);
+		// console.log("sortModel =========== >", sortModel);
+		// console.log("filterModel =========== >", filterModel);
 
 		const supabase = await createClient();
 		let queryBuilder = supabase.from(tableName).select("*"); // Можно добавить пагинацию
@@ -61,7 +61,7 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
 
 		const { data, error } = await queryBuilder;
 
-		console.log("data =========== >", data);
+		// console.log("data =========== >", data);
 
 		if (error) throw error;
 
